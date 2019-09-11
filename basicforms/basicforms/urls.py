@@ -16,10 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from basicapp import views
+from django.conf.urls import include
 
 urlpatterns = [
     path('', views.index, name='index'),
     path('admin/', admin.site.urls),
-    path('users/', views.users, name="users"),
-    path('formpage/', views.formpage, name="form_page"),
+    path('basicapp/',include('basicapp.urls'))
 ]
