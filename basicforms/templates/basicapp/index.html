@@ -1,20 +1,10 @@
 <!doctype html>
-{% load static %}
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Home</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<link rel="stylesheet" href="{% static "css/index.css" %}"/>
-	</head>
-	<body>
-		<div class="container">
-			<div class="jumbotron">
-				<h1>This is the index!</h1>
-				<a href="{% url 'basicapp:form_page'%}">Go to /formpage to fill out the form!</a><br>
-				<a href="{% url 'basicapp:users'%}">Go to /users to check out the list of users!</a>
-			</div>
-			<h3>Or log in to the admin page</h3>
+{% extends "basicapp/base.html" %}
+	{% block body_block %}
+		<div class="jumbotron">
+			<h1>This is the index!</h1>
+			<a href="{% url 'basicapp:form_page'%}">Go to /formpage to fill out the form!</a><br>
+			<a href="{% url 'basicapp:users'%}">Go to /users to check out the list of users!</a>
 		</div>
-	</body>
-</html>
+		<h3>Or use the navbar up top!</h3>
+{% endblock %}
